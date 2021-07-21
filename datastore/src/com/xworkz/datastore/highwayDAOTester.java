@@ -10,23 +10,22 @@ import com.xworkz.datastore.dto.dao.HighwayDAO;
 import com.xworkz.datastore.dto.HighWayDAOImpl;
 import com.xworkz.datastore.dto.HighWayDAOImpl.HighwayDTO;
 
-public class highwayDAOTester{
+public class highwayDAOTester {
 
 	public static void main(String[] args) {
 
-		
-				
-		HighwayDTO dto = new HighwayDTO("NH48", 48, HighwayType.NATIONALHIGHWAY, "Karnataka", 720.00d, true,"jmc1")
-			
-		HighwayDTO dto1 = new HighwayDTO("NH63", 63, HighwayType.NATIONALHIGHWAY, "Andhra", 929.00d, true,"jmc2");
-			
-		HighwayDTO dto2 = new HighwayDTO("SH4", 4, HighwayType.STATEHIGHWAY, "Karnataka,Tamilnadu", 1665.00d, true,"jmc3");
-				
+	
+
+		HighwayDTO dto1 = new HighwayDTO("NH63", 63, HighwayType.NATIONALHIGHWAY, "Andhra", 929.00d, true, "jmc2");
+
+		HighwayDTO dto2 = new HighwayDTO("SH4", 4, HighwayType.STATEHIGHWAY, "Karnataka,Tamilnadu", 1665.00d, true,
+				"jmc3");
+		HighwayDTO dto3 = new HighwayDTO("NH48", 48, HighwayType.NATIONALHIGHWAY, "Karnataka", 720.00d, true, "jmc1");
 
 		HighwayDAO dao = new HighwayDAO();
-		((HighWayDAO) dao).save(dto);
 		((HighWayDAO) dao).save(dto1);
 		((HighWayDAO) dao).save(dto2);
+		((HighWayDAO) dao).save(dto3);
 
 		System.out.println("totalItems : " + ((HighWayDAO) dao).totalItems());
 
@@ -63,13 +62,13 @@ public class highwayDAOTester{
 
 		double len = dao.lengthByNumber(48);
 		System.out.println("findbylength : " + len);
-		
+
 		HighwayDTO maxleng = dao.findByMaxLength();
 		System.out.println("max length : " + maxleng);
-		
+
 		HighwayDTO minleng = ((HighWayDAO) dao).findByminLength();
 		System.out.println("min length : " + minleng);
 
 	}
 
-}	
+}
