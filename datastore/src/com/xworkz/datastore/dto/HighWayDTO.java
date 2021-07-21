@@ -2,14 +2,14 @@ package com.xworkz.datastore.dto;
 
 import java.io.Serializable;
 
-import com.xworkz.datastore.dao.constants.HighWayType;
-
+import com.xworkz.datastore.dao.HighwayType;
+import com.xworkz.datastore.dao.constants.*;
 public class HighWayDTO  implements Serializable{
 private int id;
 private int number;
-private HighWayType type;
+private HighwayType type;
 private String stateName;
-private int length;
+private double length;
 private boolean condition;
 private String contractCompany;
 
@@ -17,24 +17,26 @@ public HighWayDTO() {
 }
 
 /**
- * @param id
+ * @param string
  * @param number
- * @param type
+ * @param nationalhighway
  * @param stateName
- * @param length
+ * @param d
  * @param condition
  * @param contractCompany
  */
-public HighWayDTO(int id, int number, HighWayType type, String stateName, int length, boolean condition,
+public HighWayDTO(String string, int number, HighwayType nationalhighway, String stateName, double d, boolean condition,
 		String contractCompany) {
 	super();
-	this.id = id;
+	int intiger = 0;
+	this.id = intiger;
 	this.number = number;
-	this.type = type;
+	this.type = nationalhighway;
 	this.stateName = stateName;
-	this.length = length;
+	this.length = d;
 	this.condition = condition;
 	this.contractCompany = contractCompany;
+
 }
 
 @Override
@@ -59,11 +61,11 @@ public void setNumber(int number) {
 	this.number = number;
 }
 
-public HighWayType getType() {
+public HighwayType getType() {
 	return type;
 }
 
-public void setType(HighWayType type) {
+public void setType(HighwayType type) {
 	this.type = type;
 }
 
@@ -76,7 +78,7 @@ public void setStateName(String stateName) {
 }
 
 public int getLength() {
-	return length;
+	return (int) length;
 }
 
 public void setLength(int length) {

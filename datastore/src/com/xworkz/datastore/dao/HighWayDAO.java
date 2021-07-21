@@ -1,6 +1,7 @@
 package com.xworkz.datastore.dao;
 
-import com.xworkz.datastore.dao.constants.HighWayType;
+import com.xworkz.datastore.constants.HighWayType;
+import com.xworkz.datastore.dto.HighWayDAOImpl.HighwayDTO;
 import com.xworkz.datastore.dto.HighWayDTO;
 import java.util.Collection;
 
@@ -8,21 +9,35 @@ import java.util.Collection;
 
 public interface HighWayDAO {
 
+	
 
-	boolean save(HighWayDTO dto);
-	Collection<HighWayDTO>findAll();
-	Collection<Integer>findAllNumber();
-	int totalItems();
-	Collection<HighWayDTO>findByHighWayType(String nh4);
-	Collection<HighWayDTO>findByStateNam(String sname);
-	Collection<Integer>findNumberByStateName(String sname );
-	boolean exist(HighWayDTO dto);
-	boolean isCondition(int number);
-	double findLengthByNumber(int no);
-	HighWayDTO findByMaxLength();
-	HighWayDTO findByMinLength();
-	Collection<HighWayDTO> findByhighWayType();
-	String findByStateName(String name);
+	
+
+
+	
+
+		boolean save(HighwayDTO dto);
+
+		int totalItems();
+
+		Collection<HighwayDTO> findAll();
+
+		Collection<Integer> findAllNumber();
+
+		Collection<HighwayDTO> findNumberByStateName(String name);
+
+		boolean exist(HighwayDTO dto3);
+
+		Collection<HighwayDTO> findByStateName(String sname);
+
+		Collection<HighwayDTO> findByHighwayType(HighwayType type);
+
+		boolean isCondition(int num);
+
+		double lengthByNumber(int no);
+
+		HighwayDTO findByMaxLength();
+		
+		HighwayDTO findByminLength();
+
 	}
-
-
